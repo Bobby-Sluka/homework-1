@@ -15,9 +15,9 @@ echo "All arguments are accessed with \$* : $*"
 # access the arguments
 
 # add the two numbers
-let "sum=$var1 + $var2"
+let "sum=$var1+$var2"
 # print the sum
-echo "sum \= $sum"
+echo $sum
 # multiply the two numbers
 let "product=$var1 * $var2"
 # print the product
@@ -29,29 +29,29 @@ echo "product \= $product"
 ## Class 2-2
 
 # Task Description
-Create a script that accepts two numbers as arguments
-and prints the sum and product of the two numbers.
+#Create a script that accepts two numbers as arguments
+#and prints the sum and product of the two numbers.
 
 # Input
-**Arguments:** two numbers
+#**Arguments:** two numbers
 
 # Output
-**Terminal:** The sum and product of the two numbers.
+#**Terminal:** The sum and product of the two numbers.
 
 # Test Cases
 
 ```
 # Input: 3 4
 # Output: sum = 7
-          product = 12
+#          product = 12
 
 # Input:  9 9
 # Output: sum = 18
-          product = 81
+#          product = 81
 
 ```
 
 # Submission instructions
-When you are finished, submit two screenshots:
-1.  A screenshot of your code.
-2.  A screenshot of correct output.
+#When you are finished, submit two screenshots:
+#1.  A screenshot of your code.
+#2.  A screenshot of correct output.
