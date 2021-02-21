@@ -1,0 +1,5 @@
+#! /bin/bash
+#Lab on 2/15 using if statements and check for two supplied arguments
+
+args=$#
+
