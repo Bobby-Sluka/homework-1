@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # lab fibonacci sequence
-#print fibonacci sequence up to inputted number
+#use java loop, counter = users input to count
 
 array=( 0 1 )
 i=1
@@ -11,15 +11,19 @@ if [ $1 -le 0 ]
 elif [ $1 -eq 1 ]
 	then echo "0 1"
 else
-	while [ ${array[-1]} -le $1 ]
+	while [ 1 -eq 1 ]
 	do
 		let "var=$i - 1"
 		let "add1=${array[$var]}"
 		let "add2=${array[$i]}"
 		let "sum=$add1 + $add2"
-		array+=( $sum )
-		i+=1
-	done
+		if [ $sum -le $1 ]
+			then array+=( $sum )
+			i=$i+1
+		else
+			break
+		fi
+
+done
 echo ${array[@]}
-echo ${array[$i]}
 fi
