@@ -7,5 +7,14 @@ input=devices.txt
 lines=`cat $input`
 for line in $lines
 do
-	ping $line -c1
+	pg=$(ping $line -c4 | grep "packet loss")
+	echo "$pg" >> ping.txt 
 done
+pingtext=ping.txt
+parse=`cat $pingtext`
+for p in parse
+do
+	#echo “$p” | cut -d% -f1
+	echo "$p"
+done
+
