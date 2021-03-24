@@ -9,22 +9,13 @@ for line in $lines
 do
 	pg=$(ping $line -c4 | grep "packet loss")
 	#echo "$pg" > ping.txt
-	echo "$pg" | cut -d "%" -f1 > ping.txt
-	value="$pg" | cut -d "," -f2
-	final="value" | cut -d " " -f1
-#	echo "final is $final"
-	echo "$value"
-	#if [ "$final" == "4" ]
-	#	then echo "online because $value = 4"
-	#else
-	#	echo "offline because $value = 0"
-	##fi  
+	echo $'\n##########################################################\n' >> ~/logs/ping.log
+	echo `date` >> ~/logs/ping.log
+	ping $line -c4 >> ~/logs/ping.log
+	final=`echo "$pg" | cut -d "," -f2 | cut -d " " -f2`
+	if [ "$final" -lt "4" ]
+		then echo "offline, must send email"
+	else
+		echo "online"
+	fi
 done
-#pingtext=ping.txt
-#parse=`cat $pingtext`
-#for p in parse
-#do
-#	#echo “$p” | cut -d% -f1
-#	echo "$p"
-#done
-
